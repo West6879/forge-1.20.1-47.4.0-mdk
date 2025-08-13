@@ -26,6 +26,7 @@ import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
+import net.west6879.firstmod.block.ModBlocks;
 import net.west6879.firstmod.item.ModCreativeModeTabs;
 import net.west6879.firstmod.item.ModItems;
 import org.slf4j.Logger;
@@ -43,6 +44,7 @@ public class FirstMod
 
         ModCreativeModeTabs.register(modEventBus);
         ModItems.register(modEventBus);
+        ModBlocks.register(modEventBus);
 
         modEventBus.addListener(this::commonSetup);
 
