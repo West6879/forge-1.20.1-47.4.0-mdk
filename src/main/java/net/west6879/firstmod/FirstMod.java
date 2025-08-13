@@ -32,9 +32,7 @@ import org.slf4j.Logger;
 @Mod(FirstMod.MODID)
 public class FirstMod
 {
-    // Define mod id in a common place for everything to reference
     public static final String MODID = "firstmod";
-    // Directly reference a slf4j logger
     private static final Logger LOGGER = LogUtils.getLogger();
 
     public FirstMod(FMLJavaModLoadingContext context)
