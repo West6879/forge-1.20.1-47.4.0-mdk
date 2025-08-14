@@ -1,9 +1,17 @@
 {
   "item.firstmod.sapphire": "Sapphire",
-  "item.firstmod.sapphire": "Raw Sapphire",
+  "item.firstmod.raw_sapphire": "Raw Sapphire",
+
+  "item.firstmod.metal_detector": "Metal Detector",
 
   "block.firstmod.sapphire_block": "Block of Sapphire",
   "block.firstmod.raw_sapphire_block": "Block of Raw Sapphire",
+  "block.firstmod.sapphire_ore": "Sapphire Ore",
+  "block.firstmod.deepslate_sapphire_ore": "Deepslate Sapphire Ore",
+  "block.firstmod.nether_sapphire_ore": "Nether Sapphire Ore",
+  "block.firstmod.end_stone_sapphire_ore": "Endstone Sapphire Ore",
+
+  "block.firstmod.sound_block": "Sound Block",
 
   "creativetab.first_tab": "First Tab"
 }
