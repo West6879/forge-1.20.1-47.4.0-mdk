@@ -23,3 +23,16 @@ run
 
 # Files from Forge MDK
 forge*changelog.txt
+
+# Minecraft generated data
+src/generated/
+
+# Logs
+*.log
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# VS Code
+.vscode/
