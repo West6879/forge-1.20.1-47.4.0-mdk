@@ -4,6 +4,10 @@
 
   "item.firstmod.metal_detector": "Metal Detector",
 
+  "item.firstmod.strawberry": "Strawberry",
+
+  "item.firstmod.pine_cone": "Pine Cone",
+
   "block.firstmod.sapphire_block": "Block of Sapphire",
   "block.firstmod.raw_sapphire_block": "Block of Raw Sapphire",
   "block.firstmod.sapphire_ore": "Sapphire Ore",
@@ -12,6 +16,8 @@
   "block.firstmod.end_stone_sapphire_ore": "Endstone Sapphire Ore",
 
   "block.firstmod.sound_block": "Sound Block",
+
+  "tooltip.firstmod.metal_detector.tooltip": "Finds valuables underground!",
 
   "creativetab.first_tab": "First Tab"
 }
