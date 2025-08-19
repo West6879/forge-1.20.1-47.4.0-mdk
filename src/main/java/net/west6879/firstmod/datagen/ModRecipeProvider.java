@@ -12,6 +12,7 @@ import net.west6879.firstmod.block.ModBlocks;
 import net.west6879.firstmod.item.ModItems;
 
 import java.util.List;
+import java.util.Map;
 import java.util.function.Consumer;
 
 public class ModRecipeProvider extends RecipeProvider implements IConditionBuilder {
@@ -29,61 +30,84 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         oreSmelting(pWriter, SAPPHIRE_SMELTABLES, RecipeCategory.MISC, ModItems.SAPPHIRE.get(), 0.25f, 200, "sapphire");
         oreBlasting(pWriter, SAPPHIRE_SMELTABLES, RecipeCategory.MISC, ModItems.SAPPHIRE.get(), 0.25f, 100, "sapphire");
 
-        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.SAPPHIRE_BLOCK.get())
-                .pattern("SSS")
-                .pattern("SSS")
-                .pattern("SSS")
-                .define('S', ModItems.SAPPHIRE.get())
-                .unlockedBy(getHasName(ModItems.SAPPHIRE.get()), has(ModItems.SAPPHIRE.get()))
-                .save(pWriter);
+        blockBuilder(ModBlocks.SAPPHIRE_BLOCK.get(), ModItems.SAPPHIRE.get(), 3, true, pWriter);
+        blockBuilder(ModBlocks.RAW_SAPPHIRE_BLOCK.get(), ModItems.RAW_SAPPHIRE.get(), 3, true, pWriter);
 
-        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.RAW_SAPPHIRE_BLOCK.get())
-                .pattern("SSS")
-                .pattern("SSS")
-                .pattern("SSS")
-                .define('S', ModItems.RAW_SAPPHIRE.get())
-                .unlockedBy(getHasName(ModItems.RAW_SAPPHIRE.get()), has(ModItems.RAW_SAPPHIRE.get()))
-                .save(pWriter);
+        armorSetBuilder(ModItems.SAPPHIRE_HELMET.get(), ModItems.SAPPHIRE_CHESTPLATE.get(), ModItems.SAPPHIRE_LEGGINGS.get(),
+                ModItems.SAPPHIRE_BOOTS.get(), ModItems.SAPPHIRE.get(), pWriter);
+    }
 
-        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, ModItems.SAPPHIRE_HELMET.get())
+    protected static void blockBuilder(ItemLike result, ItemLike ingredient, int size, boolean reverse, Consumer<FinishedRecipe> pWriter) {
+        if(size == 3) {
+            ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, result)
+                    .pattern("SSS")
+                    .pattern("SSS")
+                    .pattern("SSS")
+                    .define('S', ingredient)
+                    .unlockedBy(getHasName(ingredient), has(ingredient))
+                    .save(pWriter);
+        }
+        else if(size == 2) {
+            ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, result)
+                    .pattern("SS")
+                    .pattern("SS")
+                    .define('S', ingredient)
+                    .unlockedBy(getHasName(ingredient), has(ingredient))
+                    .save(pWriter);
+        }
+
+        if(reverse == true) {
+            ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ingredient, (size == 3) ? 9 : 4)
+                    .requires(result)
+                    .unlockedBy(getHasName(result), has(result))
+                    .save(pWriter);
+        }
+    }
+
+    protected static void helmetBuilder(ItemLike result, ItemLike ingredient, Consumer<FinishedRecipe> pWriter) {
+        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, result)
                 .pattern("SSS")
                 .pattern("S S")
-                .define('S', ModItems.SAPPHIRE.get())
-                .unlockedBy(getHasName(ModItems.SAPPHIRE.get()), has(ModItems.SAPPHIRE.get()))
+                .define('S', ingredient)
+                .unlockedBy(getHasName(ingredient), has(ingredient))
                 .save(pWriter);
+    }
 
-        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, ModItems.SAPPHIRE_CHESTPLATE.get())
+    protected static void chestplateBuilder(ItemLike result, ItemLike ingredient, Consumer<FinishedRecipe> pWriter) {
+        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, result)
                 .pattern("S S")
                 .pattern("SSS")
                 .pattern("SSS")
-                .define('S', ModItems.SAPPHIRE.get())
-                .unlockedBy(getHasName(ModItems.SAPPHIRE.get()), has(ModItems.SAPPHIRE.get()))
+                .define('S', ingredient)
+                .unlockedBy(getHasName(ingredient), has(ingredient))
                 .save(pWriter);
+    }
 
-        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, ModItems.SAPPHIRE_LEGGINGS.get())
+    protected static void leggingsBuilder(ItemLike result, ItemLike ingredient, Consumer<FinishedRecipe> pWriter) {
+        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, result)
                 .pattern("SSS")
                 .pattern("S S")
                 .pattern("S S")
-                .define('S', ModItems.SAPPHIRE.get())
-                .unlockedBy(getHasName(ModItems.SAPPHIRE.get()), has(ModItems.SAPPHIRE.get()))
+                .define('S', ingredient)
+                .unlockedBy(getHasName(ingredient), has(ingredient))
                 .save(pWriter);
+    }
 
-        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, ModItems.SAPPHIRE_BOOTS.get())
+    protected static void bootsBuilder(ItemLike result, ItemLike ingredient, Consumer<FinishedRecipe> pWriter) {
+        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, result)
                 .pattern("S S")
                 .pattern("S S")
-                .define('S', ModItems.SAPPHIRE.get())
-                .unlockedBy(getHasName(ModItems.SAPPHIRE.get()), has(ModItems.SAPPHIRE.get()))
+                .define('S', ingredient)
+                .unlockedBy(getHasName(ingredient), has(ingredient))
                 .save(pWriter);
+    }
 
-        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.SAPPHIRE.get(), 9)
-                .requires(ModBlocks.SAPPHIRE_BLOCK.get())
-                .unlockedBy(getHasName(ModBlocks.SAPPHIRE_BLOCK.get()), has(ModBlocks.SAPPHIRE_BLOCK.get()))
-                .save(pWriter);
-
-        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.RAW_SAPPHIRE.get(), 9)
-                .requires(ModBlocks.RAW_SAPPHIRE_BLOCK.get())
-                .unlockedBy(getHasName(ModBlocks.RAW_SAPPHIRE_BLOCK.get()), has(ModBlocks.RAW_SAPPHIRE_BLOCK.get()))
-                .save(pWriter);
+    protected static void armorSetBuilder(ItemLike helmet, ItemLike chestplate, ItemLike leggings, ItemLike boots,
+                                          ItemLike ingredient, Consumer<FinishedRecipe> pWriter) {
+        helmetBuilder(helmet, ingredient, pWriter);
+        chestplateBuilder(chestplate, ingredient, pWriter);
+        leggingsBuilder(leggings, ingredient, pWriter);
+        bootsBuilder(boots, ingredient, pWriter);
     }
 
     protected static void oreSmelting(Consumer<FinishedRecipe> pFinishedRecipeConsumer, List<ItemLike> pIngredients, RecipeCategory pCategory, ItemLike pResult, float pExperience, int pCookingTIme, String pGroup) {
