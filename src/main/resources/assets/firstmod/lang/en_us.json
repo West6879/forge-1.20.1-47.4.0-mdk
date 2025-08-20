@@ -5,6 +5,9 @@
   "item.firstmod.metal_detector": "Metal Detector",
 
   "item.firstmod.strawberry": "Strawberry",
+  "item.firstmod.strawberry_seeds": "Strawberry Seeds",
+  "item.firstmod.corn": "Corn",
+  "item.firstmod.corn_seeds": "Corn Seeds",
 
   "item.firstmod.pine_cone": "Pine Cone",
 
@@ -20,6 +23,8 @@
   "item.firstmod.sapphire_chestplate": "Sapphire Chestplate",
   "item.firstmod.sapphire_leggings": "Sapphire Leggings",
   "item.firstmod.sapphire_boots": "Sapphire Boots",
+
+  "block.firstmod.catmint": "Catmint",
 
   "block.firstmod.sapphire_block": "Block of Sapphire",
   "block.firstmod.raw_sapphire_block": "Block of Raw Sapphire",

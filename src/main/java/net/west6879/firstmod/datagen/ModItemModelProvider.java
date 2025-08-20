@@ -46,6 +46,9 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(ModItems.RAW_SAPPHIRE);
         simpleItem(ModItems.METAL_DETECTOR);
         simpleItem(ModItems.STRAWBERRY);
+        simpleItem(ModItems.STRAWBERRY_SEEDS);
+        simpleItem(ModItems.CORN);
+        simpleItem(ModItems.CORN_SEEDS);
         simpleItem(ModItems.PINE_CONE);
 
         handheldItem(ModItems.SAPPHIRE_SWORD);
@@ -72,6 +75,8 @@ public class ModItemModelProvider extends ItemModelProvider {
 
         trapdoorItem(ModBlocks.SAPPHIRE_TRAPDOOR);
 
+        simpleBlockItemBlockTexture(ModBlocks.CATMINT);
+
     }
 
     private ItemModelBuilder simpleItem(RegistryObject<Item> item) {
@@ -84,6 +89,12 @@ public class ModItemModelProvider extends ItemModelProvider {
         return withExistingParent(item.getId().getPath(),
                 ResourceLocation.tryParse("item/generated")).texture("layer0",
                 ResourceLocation.tryBuild(FirstMod.MODID,"item/" + item.getId().getPath()));
+    }
+
+    private ItemModelBuilder simpleBlockItemBlockTexture(RegistryObject<Block> item) {
+        return withExistingParent(item.getId().getPath(),
+                ResourceLocation.tryParse("item/generated")).texture("layer0",
+                ResourceLocation.tryBuild(FirstMod.MODID,"block/" + item.getId().getPath()));
     }
 
     private ItemModelBuilder handheldItem(RegistryObject<Item> item) {

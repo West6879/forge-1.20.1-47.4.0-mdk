@@ -25,6 +25,9 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.METAL_DETECTOR.get());
 
                         output.accept(ModItems.STRAWBERRY.get());
+                        output.accept(ModItems.STRAWBERRY_SEEDS.get());
+                        output.accept(ModItems.CORN.get());
+                        output.accept(ModItems.CORN_SEEDS.get());
 
                         output.accept(ModItems.PINE_CONE.get());
 
@@ -41,7 +44,7 @@ public class ModCreativeModeTabs {
 
                         output.accept(ModItems.SAPPHIRE_STAFF.get());
 
-                        output.accept(Items.DIAMOND);
+                        output.accept(ModBlocks.CATMINT.get());
 
                         output.accept(ModBlocks.SAPPHIRE_BLOCK.get());
                         output.accept(ModBlocks.RAW_SAPPHIRE_BLOCK.get());

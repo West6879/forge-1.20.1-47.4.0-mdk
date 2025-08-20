@@ -2,17 +2,19 @@ package net.west6879.firstmod.datagen;
 
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.*;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.AbstractCookingRecipe;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.item.crafting.RecipeSerializer;
 import net.minecraft.world.level.ItemLike;
 import net.minecraftforge.common.crafting.conditions.IConditionBuilder;
+import net.minecraftforge.registries.ForgeRegistries;
 import net.west6879.firstmod.FirstMod;
 import net.west6879.firstmod.block.ModBlocks;
 import net.west6879.firstmod.item.ModItems;
 
 import java.util.List;
-import java.util.Map;
 import java.util.function.Consumer;
 
 public class ModRecipeProvider extends RecipeProvider implements IConditionBuilder {
@@ -33,8 +35,70 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         blockBuilder(ModBlocks.SAPPHIRE_BLOCK.get(), ModItems.SAPPHIRE.get(), 3, true, pWriter);
         blockBuilder(ModBlocks.RAW_SAPPHIRE_BLOCK.get(), ModItems.RAW_SAPPHIRE.get(), 3, true, pWriter);
 
+        swordBuilder(ModItems.SAPPHIRE_SWORD.get(), ModItems.SAPPHIRE.get(), pWriter);
+        pickaxeBuilder(ModItems.SAPPHIRE_PICKAXE.get(), ModItems.SAPPHIRE.get(), pWriter);
+        axeBuilder(ModItems.SAPPHIRE_AXE.get(), ModItems.SAPPHIRE.get(), pWriter);
+        shovelBuilder(ModItems.SAPPHIRE_SHOVEL.get(), ModItems.SAPPHIRE.get(), pWriter);
+        hoeBuilder(ModItems.SAPPHIRE_HOE.get(), ModItems.SAPPHIRE.get(), pWriter);
+
         armorSetBuilder(ModItems.SAPPHIRE_HELMET.get(), ModItems.SAPPHIRE_CHESTPLATE.get(), ModItems.SAPPHIRE_LEGGINGS.get(),
                 ModItems.SAPPHIRE_BOOTS.get(), ModItems.SAPPHIRE.get(), pWriter);
+    }
+
+    protected static void swordBuilder(ItemLike result, ItemLike ingredient, Consumer<FinishedRecipe> pWriter) {
+        ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, result)
+                .pattern("S")
+                .pattern("S")
+                .pattern("I")
+                .define('S', ingredient)
+                .define('I', Items.STICK)
+                .unlockedBy(getHasName(ingredient), has(ingredient))
+                .save(pWriter);
+    }
+
+    protected static void pickaxeBuilder(ItemLike result, ItemLike ingredient, Consumer<FinishedRecipe> pWriter) {
+        ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, result)
+                .pattern("SSS")
+                .pattern(" I ")
+                .pattern(" I ")
+                .define('S', ingredient)
+                .define('I', Items.STICK)
+                .unlockedBy(getHasName(ingredient), has(ingredient))
+                .save(pWriter);
+    }
+
+    protected static void axeBuilder(ItemLike result, ItemLike ingredient, Consumer<FinishedRecipe> pWriter) {
+        ResourceLocation id = ForgeRegistries.ITEMS.getKey(result.asItem());
+        ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, result)
+                .pattern("SS")
+                .pattern("SI")
+                .pattern(" I")
+                .define('S', ingredient)
+                .define('I', Items.STICK)
+                .unlockedBy(getHasName(ingredient), has(ingredient))
+                .save(pWriter);
+    }
+
+    protected static void shovelBuilder(ItemLike result, ItemLike ingredient, Consumer<FinishedRecipe> pWriter) {
+        ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, result)
+                .pattern("S")
+                .pattern("I")
+                .pattern("I")
+                .define('S', ingredient)
+                .define('I', Items.STICK)
+                .unlockedBy(getHasName(ingredient), has(ingredient))
+                .save(pWriter);
+    }
+
+    protected static void hoeBuilder(ItemLike result, ItemLike ingredient, Consumer<FinishedRecipe> pWriter) {
+        ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, result)
+                .pattern("SS")
+                .pattern(" I")
+                .pattern(" I")
+                .define('S', ingredient)
+                .define('I', Items.STICK)
+                .unlockedBy(getHasName(ingredient), has(ingredient))
+                .save(pWriter);
     }
 
     protected static void blockBuilder(ItemLike result, ItemLike ingredient, int size, boolean reverse, Consumer<FinishedRecipe> pWriter) {

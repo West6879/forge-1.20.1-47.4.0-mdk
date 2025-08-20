@@ -6,6 +6,7 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import net.west6879.firstmod.FirstMod;
+import net.west6879.firstmod.block.ModBlocks;
 import net.west6879.firstmod.item.custom.FuelItem;
 import net.west6879.firstmod.item.custom.MetalDetectorItem;
 import net.west6879.firstmod.item.custom.ModArmorItem;
@@ -25,6 +26,12 @@ public class ModItems {
 
     public static final RegistryObject<Item> STRAWBERRY = ITEMS.register("strawberry",
             () -> new Item(new Item.Properties().food(ModFoods.STRAWBERRY)));
+    public static final RegistryObject<Item> STRAWBERRY_SEEDS = ITEMS.register("strawberry_seeds",
+            () -> new ItemNameBlockItem(ModBlocks.STRAWBERRY_CROP.get(), new Item.Properties()));
+    public static final RegistryObject<Item> CORN = ITEMS.register("corn",
+            () -> new Item(new Item.Properties().food(ModFoods.CORN)));
+    public static final RegistryObject<Item> CORN_SEEDS = ITEMS.register("corn_seeds",
+            () -> new ItemNameBlockItem(ModBlocks.CORN_CROP.get(), new Item.Properties()));
 
     public static final RegistryObject<Item> PINE_CONE = ITEMS.register("pine_cone",
             () -> new FuelItem(new Item.Properties(), 400));
