@@ -31,6 +31,7 @@ import net.west6879.firstmod.block.ModBlocks;
 import net.west6879.firstmod.item.ModCreativeModeTabs;
 import net.west6879.firstmod.item.ModItems;
 import net.west6879.firstmod.loot.ModLootModifiers;
+import net.west6879.firstmod.villager.ModVillagers;
 import org.slf4j.Logger;
 
 // The value here should match an entry in the META-INF/mods.toml file
@@ -48,6 +49,7 @@ public class FirstMod
         ModItems.register(modEventBus);
         ModBlocks.register(modEventBus);
         ModLootModifiers.register(modEventBus);
+        ModVillagers.register(modEventBus);
 
         modEventBus.addListener(this::commonSetup);
 

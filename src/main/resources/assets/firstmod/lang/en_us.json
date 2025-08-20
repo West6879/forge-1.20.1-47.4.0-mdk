@@ -45,6 +45,8 @@
   "block.firstmod.sapphire_door": "Sapphire Door",
   "block.firstmod.sapphire_trapdoor": "Sapphire Trapdoor",
 
+  "entity.minecraft.villager.firstmod.sound_master": "Sound Master",
+
   "tooltip.firstmod.metal_detector.tooltip": "Finds valuables underground!",
 
   "creativetab.first_tab": "First Tab"

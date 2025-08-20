@@ -13,6 +13,7 @@ import net.minecraft.world.level.block.state.properties.IntegerProperty;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import net.west6879.firstmod.item.ModItems;
+import org.jetbrains.annotations.NotNull;
 
 public class CornCropBlock extends CropBlock {
     public static final int FIRST_STAGE_MAX_AGE = 7;
@@ -40,7 +41,7 @@ public class CornCropBlock extends CropBlock {
         return SHAPE_BY_AGE[this.getAge(pState)];
     }
 
-    public void randomTick(BlockState pState, ServerLevel pLevel, BlockPos pPos, RandomSource pRandom) {
+    public void randomTick(BlockState pState, @NotNull ServerLevel pLevel, BlockPos pPos, RandomSource pRandom) {
         if (!pLevel.isAreaLoaded(pPos, 1)) return;
         if (pLevel.getBrightness(LightLayer.BLOCK, pPos) >= 9) {
             int currentAge = this.getAge(pState);

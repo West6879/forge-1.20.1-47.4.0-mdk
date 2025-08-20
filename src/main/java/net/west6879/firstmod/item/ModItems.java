@@ -10,7 +10,6 @@ import net.west6879.firstmod.block.ModBlocks;
 import net.west6879.firstmod.item.custom.FuelItem;
 import net.west6879.firstmod.item.custom.MetalDetectorItem;
 import net.west6879.firstmod.item.custom.ModArmorItem;
-import net.west6879.firstmod.util.ModTags;
 
 public class ModItems {
     public static final DeferredRegister<Item> ITEMS =

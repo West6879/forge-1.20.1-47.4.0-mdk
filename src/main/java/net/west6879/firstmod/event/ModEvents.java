@@ -15,7 +15,9 @@ import net.minecraftforge.event.village.WandererTradesEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.west6879.firstmod.FirstMod;
+import net.west6879.firstmod.block.ModBlocks;
 import net.west6879.firstmod.item.ModItems;
+import net.west6879.firstmod.villager.ModVillagers;
 
 import java.util.List;
 
@@ -44,6 +46,21 @@ public class ModEvents {
                     new ItemStack(Items.EMERALD, 32),
                     enchantedBook,
                     2, 8, 0.02f));
+        }
+        if(event.getType() == ModVillagers.SOUND_MASTER.get()) {
+            Int2ObjectMap<List<VillagerTrades.ItemListing>> trades = event.getTrades();
+            trades.get(1).add((pTrader, pRandom) -> new MerchantOffer(
+                    new ItemStack(Items.EMERALD, 5),
+                    new ItemStack(ModBlocks.SOUND_BLOCK.get(), 1),
+                    12, 4, 0.1f));
+            trades.get(1).add((pTrader, pRandom) -> new MerchantOffer(
+                    new ItemStack(Items.EMERALD, 7),
+                    new ItemStack(ModBlocks.SAPPHIRE_DOOR.get(), 1),
+                    12, 4, 0.01f));
+            trades.get(2).add((pTrader, pRandom) -> new MerchantOffer(
+                    new ItemStack(Items.EMERALD, 32),
+                    new ItemStack(ModBlocks.SAPPHIRE_BLOCK.get(), 8),
+                    8, 8, 0.15f));
         }
     }
 
