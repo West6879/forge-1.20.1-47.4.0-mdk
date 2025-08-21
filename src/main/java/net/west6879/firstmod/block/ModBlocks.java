@@ -17,6 +17,7 @@ import net.west6879.firstmod.block.custom.CornCropBlock;
 import net.west6879.firstmod.block.custom.SoundBlock;
 import net.west6879.firstmod.block.custom.StrawberryCropBlock;
 import net.west6879.firstmod.item.ModItems;
+import net.west6879.firstmod.sound.ModSounds;
 
 import java.util.function.Supplier;
 
@@ -44,7 +45,7 @@ public class ModBlocks {
                     .strength(4f).requiresCorrectToolForDrops(), UniformInt.of(4,8)));
 
     public static final RegistryObject<Block> SOUND_BLOCK = registerBlock("sound_block",
-            () -> new SoundBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK)));
+            () -> new SoundBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).sound(ModSounds.SOUND_BLOCK_SOUNDS)));
 
     public static final RegistryObject<Block> SAPPHIRE_STAIRS = registerBlock("sapphire_stairs",
             () -> new StairBlock(() -> ModBlocks.SAPPHIRE_BLOCK.get().defaultBlockState(),

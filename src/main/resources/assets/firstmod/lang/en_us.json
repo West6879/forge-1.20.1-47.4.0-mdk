@@ -24,6 +24,9 @@
   "item.firstmod.sapphire_leggings": "Sapphire Leggings",
   "item.firstmod.sapphire_boots": "Sapphire Boots",
 
+  "item.firstmod.bar_brawl_music_disc": "Bar Brawl Music Disc",
+  "item.firstmod.bar_brawl_music_disc.desc": "Bryan Tech - Bar Brawl (CC0)",
+
   "block.firstmod.catmint": "Catmint",
 
   "block.firstmod.sapphire_block": "Block of Sapphire",
@@ -48,6 +51,8 @@
   "entity.minecraft.villager.firstmod.sound_master": "Sound Master",
 
   "tooltip.firstmod.metal_detector.tooltip": "Finds valuables underground!",
+
+  "sounds.tutorialmod.metal_detector_found_ore": "Metal Detector Jingle",
 
   "creativetab.first_tab": "First Tab"
 }

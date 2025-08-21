@@ -31,6 +31,7 @@ import net.west6879.firstmod.block.ModBlocks;
 import net.west6879.firstmod.item.ModCreativeModeTabs;
 import net.west6879.firstmod.item.ModItems;
 import net.west6879.firstmod.loot.ModLootModifiers;
+import net.west6879.firstmod.sound.ModSounds;
 import net.west6879.firstmod.villager.ModVillagers;
 import org.slf4j.Logger;
 
@@ -50,6 +51,7 @@ public class FirstMod
         ModBlocks.register(modEventBus);
         ModLootModifiers.register(modEventBus);
         ModVillagers.register(modEventBus);
+        ModSounds.register(modEventBus);
 
         modEventBus.addListener(this::commonSetup);
 

@@ -10,6 +10,7 @@ import net.west6879.firstmod.block.ModBlocks;
 import net.west6879.firstmod.item.custom.FuelItem;
 import net.west6879.firstmod.item.custom.MetalDetectorItem;
 import net.west6879.firstmod.item.custom.ModArmorItem;
+import net.west6879.firstmod.sound.ModSounds;
 
 public class ModItems {
     public static final DeferredRegister<Item> ITEMS =
@@ -57,6 +58,9 @@ public class ModItems {
             () -> new ArmorItem(ModArmorMaterials.SAPPHIRE, ArmorItem.Type.LEGGINGS, new Item.Properties()));
     public static final RegistryObject<Item> SAPPHIRE_BOOTS = ITEMS.register("sapphire_boots",
             () -> new ArmorItem(ModArmorMaterials.SAPPHIRE, ArmorItem.Type.BOOTS, new Item.Properties()));
+
+    public static final RegistryObject<Item> BAR_BRAWL_MUSIC_DISC = ITEMS.register("bar_brawl_music_disc",
+            () -> new RecordItem(6, ModSounds.BAR_BRAWL, new Item.Properties().stacksTo(1), 2440));
 
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);
