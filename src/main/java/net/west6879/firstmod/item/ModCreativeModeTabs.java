@@ -4,7 +4,6 @@ import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.Items;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.RegistryObject;
@@ -44,6 +43,7 @@ public class ModCreativeModeTabs {
 
                         output.accept(ModItems.SAPPHIRE_STAFF.get());
                         output.accept(ModItems.BAR_BRAWL_MUSIC_DISC.get());
+                        output.accept(ModItems.RHINO_SPAWN_EGG.get());
 
                         output.accept(ModBlocks.CATMINT.get());
 

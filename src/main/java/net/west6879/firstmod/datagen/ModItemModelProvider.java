@@ -52,6 +52,8 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(ModItems.PINE_CONE);
         simpleItem(ModItems.BAR_BRAWL_MUSIC_DISC);
 
+        withExistingParent(ModItems.RHINO_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
+
         handheldItem(ModItems.SAPPHIRE_SWORD);
         handheldItem(ModItems.SAPPHIRE_PICKAXE);
         handheldItem(ModItems.SAPPHIRE_AXE);
