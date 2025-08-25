@@ -66,6 +66,14 @@ public class ModCreativeModeTabs {
                         output.accept(ModBlocks.SAPPHIRE_DOOR.get());
                         output.accept(ModBlocks.SAPPHIRE_TRAPDOOR.get());
                         output.accept(ModBlocks.SAPPHIRE_PRESSURE_PLATE.get());
+                        output.accept(ModBlocks.GEM_POLISHING_STATION.get());
+
+                        output.accept(ModItems.RUBY.get());
+                        output.accept(ModItems.RAW_RUBY.get());
+                        output.accept(ModItems.RUBY_SWORD.get());
+                        output.accept(ModBlocks.RUBY_BLOCK.get());
+                        output.accept(ModBlocks.RUBY_ORE.get());
+                        output.accept(ModBlocks.DEEPSLATE_RUBY_ORE.get());
                     })
                     .build());
 

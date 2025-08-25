@@ -143,7 +143,7 @@ public class RhinoEntity extends Animal {
     @Nullable
     @Override
     protected SoundEvent getHurtSound(DamageSource pDamageSource) {
-        return SoundEvents.RAVAGER_HURT;
+        return SoundEvents.CHICKEN_HURT;
     }
 
     @Nullable

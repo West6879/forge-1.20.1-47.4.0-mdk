@@ -1,6 +1,8 @@
 {
   "item.firstmod.sapphire": "Sapphire",
   "item.firstmod.raw_sapphire": "Raw Sapphire",
+  "item.firstmod.ruby": "Ruby",
+  "item.firstmod.raw_ruby": "Raw Ruby",
 
   "item.firstmod.metal_detector": "Metal Detector",
 
@@ -18,6 +20,8 @@
   "item.firstmod.sapphire_axe": "Sapphire Axe",
   "item.firstmod.sapphire_shovel": "Sapphire Shovel",
   "item.firstmod.sapphire_hoe": "Sapphire Hoe",
+
+  "item.firstmod.ruby_sword": "Ruby Sword",
 
   "item.firstmod.sapphire_helmet": "Sapphire Helmet",
   "item.firstmod.sapphire_chestplate": "Sapphire Chestplate",
@@ -38,6 +42,10 @@
   "block.firstmod.nether_sapphire_ore": "Nether Sapphire Ore",
   "block.firstmod.end_stone_sapphire_ore": "Endstone Sapphire Ore",
 
+  "block.firstmod.ruby_block": "Block of Ruby",
+  "block.firstmod.ruby_ore": "Ruby Ore",
+  "block.firstmod.deepslate_ruby_ore": "Deepslate Ruby Ore",
+
   "block.firstmod.sound_block": "Sound Block",
 
   "block.firstmod.sapphire_stairs": "Sapphire Stairs",
@@ -49,6 +57,8 @@
   "block.firstmod.sapphire_wall": "Sapphire Wall",
   "block.firstmod.sapphire_door": "Sapphire Door",
   "block.firstmod.sapphire_trapdoor": "Sapphire Trapdoor",
+
+  "block.firstmod.gem_polishing_station": "Gem Polishing Station",
 
   "entity.minecraft.villager.firstmod.sound_master": "Sound Master",
 

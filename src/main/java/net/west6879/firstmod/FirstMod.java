@@ -1,6 +1,7 @@
 package net.west6879.firstmod;
 
 import com.mojang.logging.LogUtils;
+import net.minecraft.client.gui.screens.MenuScreens;
 import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraft.world.level.block.Blocks;
@@ -16,11 +17,14 @@ import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.west6879.firstmod.block.ModBlocks;
+import net.west6879.firstmod.block.entity.ModBlockEntities;
 import net.west6879.firstmod.entity.ModEntities;
 import net.west6879.firstmod.entity.client.RhinoRenderer;
 import net.west6879.firstmod.item.ModCreativeModeTabs;
 import net.west6879.firstmod.item.ModItems;
 import net.west6879.firstmod.loot.ModLootModifiers;
+import net.west6879.firstmod.screen.GemPolishingStationScreen;
+import net.west6879.firstmod.screen.ModMenuTypes;
 import net.west6879.firstmod.sound.ModSounds;
 import net.west6879.firstmod.villager.ModVillagers;
 import org.slf4j.Logger;
@@ -43,6 +47,8 @@ public class FirstMod
         ModVillagers.register(modEventBus);
         ModSounds.register(modEventBus);
         ModEntities.register(modEventBus);
+        ModBlockEntities.register(modEventBus);
+        ModMenuTypes.register(modEventBus);
 
         modEventBus.addListener(this::commonSetup);
 
@@ -81,6 +87,7 @@ public class FirstMod
         public static void onClientSetup(FMLClientSetupEvent event)
         {
             EntityRenderers.register(ModEntities.RHINO.get(), RhinoRenderer::new);
+            MenuScreens.register(ModMenuTypes.GEM_POLISHING_MENU.get(), GemPolishingStationScreen::new);
         }
     }
 }

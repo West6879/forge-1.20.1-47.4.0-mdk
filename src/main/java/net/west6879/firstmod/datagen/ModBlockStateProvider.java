@@ -7,6 +7,7 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.IntegerProperty;
 import net.minecraftforge.client.model.generators.BlockStateProvider;
 import net.minecraftforge.client.model.generators.ConfiguredModel;
+import net.minecraftforge.client.model.generators.ModelFile;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.registries.RegistryObject;
 import net.west6879.firstmod.FirstMod;
@@ -25,10 +26,15 @@ public class ModBlockStateProvider extends BlockStateProvider {
         blockWithItem(ModBlocks.SAPPHIRE_BLOCK);
         blockWithItem(ModBlocks.RAW_SAPPHIRE_BLOCK);
 
+        blockWithItem(ModBlocks.RUBY_BLOCK);
+
         blockWithItem(ModBlocks.SAPPHIRE_ORE);
         blockWithItem(ModBlocks.DEEPSLATE_SAPPHIRE_ORE);
         blockWithItem(ModBlocks.NETHER_SAPPHIRE_ORE);
         blockWithItem(ModBlocks.END_STONE_SAPPHIRE_ORE);
+
+        blockWithItem(ModBlocks.RUBY_ORE);
+        blockWithItem(ModBlocks.DEEPSLATE_RUBY_ORE);
 
         blockWithItem(ModBlocks.SOUND_BLOCK);
 
@@ -52,6 +58,8 @@ public class ModBlockStateProvider extends BlockStateProvider {
                 blockTexture(ModBlocks.CATMINT.get())).renderType("cutout"));
         simpleBlockWithItem(ModBlocks.POTTED_CATMINT.get(), models().singleTexture("potted_catmint",
                 ResourceLocation.tryParse("flower_pot_cross"),"plant", blockTexture(ModBlocks.CATMINT.get())).renderType("cutout"));
+
+        simpleBlockWithItem(ModBlocks.GEM_POLISHING_STATION.get(), new ModelFile.UncheckedModelFile(modLoc("block/gem_polishing_station")));
     }
 
     private void createCropBlockStates(Block pBlock, IntegerProperty pCropAgeProperty, String pModelName, String pTextureName){

@@ -22,6 +22,8 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
     private static final List<ItemLike> SAPPHIRE_SMELTABLES = List.of(ModItems.RAW_SAPPHIRE.get(),
             ModBlocks.SAPPHIRE_ORE.get(), ModBlocks.DEEPSLATE_SAPPHIRE_ORE.get(),
             ModBlocks.NETHER_SAPPHIRE_ORE.get(), ModBlocks.END_STONE_SAPPHIRE_ORE.get());
+    private static final List<ItemLike> RUBY_SMELTABLES = List.of(ModItems.RAW_RUBY.get(),
+            ModBlocks.RUBY_ORE.get(), ModBlocks.DEEPSLATE_RUBY_ORE.get());
 
     public ModRecipeProvider(PackOutput pOutput) {
         super(pOutput);
@@ -34,12 +36,15 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
 
         blockBuilder(ModBlocks.SAPPHIRE_BLOCK.get(), ModItems.SAPPHIRE.get(), 3, true, pWriter);
         blockBuilder(ModBlocks.RAW_SAPPHIRE_BLOCK.get(), ModItems.RAW_SAPPHIRE.get(), 3, true, pWriter);
+        blockBuilder(ModBlocks.RUBY_BLOCK.get(), ModItems.RUBY.get(), 3, true, pWriter);
 
         swordBuilder(ModItems.SAPPHIRE_SWORD.get(), ModItems.SAPPHIRE.get(), pWriter);
         pickaxeBuilder(ModItems.SAPPHIRE_PICKAXE.get(), ModItems.SAPPHIRE.get(), pWriter);
         axeBuilder(ModItems.SAPPHIRE_AXE.get(), ModItems.SAPPHIRE.get(), pWriter);
         shovelBuilder(ModItems.SAPPHIRE_SHOVEL.get(), ModItems.SAPPHIRE.get(), pWriter);
         hoeBuilder(ModItems.SAPPHIRE_HOE.get(), ModItems.SAPPHIRE.get(), pWriter);
+        swordBuilder(ModItems.RUBY_SWORD.get(), ModItems.RUBY.get(), pWriter);
+
 
         armorSetBuilder(ModItems.SAPPHIRE_HELMET.get(), ModItems.SAPPHIRE_CHESTPLATE.get(), ModItems.SAPPHIRE_LEGGINGS.get(),
                 ModItems.SAPPHIRE_BOOTS.get(), ModItems.SAPPHIRE.get(), pWriter);
